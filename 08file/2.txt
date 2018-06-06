@@ -1,0 +1,1 @@
+原因为rf.writeBytes方法将中文拆成两个字节写进文本造成乱码rf.write方法是将每两个字节合成一个中文并写时文本。 换行的效果:1、rf.write(("\n\r" + conte...dsadadsad
