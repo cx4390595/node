@@ -13,15 +13,13 @@ function copy(src,target) {
                 pos += bytesRead;
                 if(bytesRead>0) read();
                 else {
-                    var result = Buffer.concat(list.slice(0,pos));
+                    var result =Buffer.concat(list.slice(0,pos));
+                    console.log(result.length)
                     /*写入开始*/
                     fs.open(target,'w',function (err,fd) {
-                        function write(){
                             fs.write(fd,result,0,pos,0,function (err,bytesWrite) {
                                 fs.close(fd)
-                            })
-                        }
-                        write()
+                            });
                     })
                 // 写入结束
                 }
@@ -30,4 +28,4 @@ function copy(src,target) {
         read()
     })
 }
-copy('line.txt','2.txt');
+copy('1.txt','2.txt');
