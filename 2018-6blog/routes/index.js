@@ -1,10 +1,11 @@
 var express = require('express');
 //返回一个路由的实例
 var router = express.Router();
+var markdown = require('markdown').markdown;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '欢迎光临我的博客' });
+    res.redirect('/articles/list/1/2')
 });
 
 module.exports = router;
